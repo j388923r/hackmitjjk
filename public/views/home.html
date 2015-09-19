@@ -1,3 +1,13 @@
 ﻿<div>
     {{title}}
 </div>
+<div id = "searchDiv" class="ui input focus" style = "padding-top: 75px">
+  <input id = "search" type="text" placeholder="Search...">
+  <button id = "test" class = "ui button">InfoMagic!</button>
+</div>
+<div id = "infographic">
+	<img id="image" />
+	<div id="text" class="ul list">
+		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
+	</div>
+</div>
