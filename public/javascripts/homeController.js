@@ -11,6 +11,15 @@
         $scope.title = 'homeController';
 
         activate();
+        
+        $scope.analyzeText = function (text) {
+            $http.post('/textanalytics', {
+                text: text
+            }).success(function (analyzeText) {
+                var json = $.xml2json(xml);
+                console.log(json);           
+            });
+        }
 
         function activate() { }
     }
