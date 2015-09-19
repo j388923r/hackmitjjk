@@ -3,9 +3,17 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
+	<script src="/javascripts/app.js"></script>
+	<script src="/javascripts/homeController.js"></script>
   </head>
-  <body>
+  <body ng-app="app">
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+	<div ng-view></div>
   </body>
 </html>
