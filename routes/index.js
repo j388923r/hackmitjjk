@@ -1,4 +1,3 @@
-var key = "AvKYKc+kNtCLSyX3BJxYuLFpc/lrOCpKV7MujKRucnw";
 var express = require('express');
 var request = require('request');
 var router = express.Router();
