@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>InfoMagic</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-	
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
 
+	<script src="semantic/dist/semantic.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
@@ -12,8 +13,6 @@
 	<script src="/javascripts/homeController.js"></script>
   </head>
   <body ng-app="app">
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 	<div ng-view></div>
   </body>
 </html>
