@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-console.log(process.env.azureml_key || "AvKYKc+kNtCLSyX3BJxYuLFpc/lrOCpKV7MujKRucnw");
+//process.env.azureml_key || "AvKYKc+kNtCLSyX3BJxYuLFpc/lrOCpKV7MujKRucnw"
 
 // error handlers
 
