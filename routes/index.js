@@ -1,15 +1,63 @@
 var express = require('express');
 var request = require('request');
 var Clarifai = require('./clarifai-nodejs/clarifai_node.js');
-var fbgraph = require('fbgraphapi')
+// var fbgraph = require('fbgraphapi')
 var router = express.Router();
-var fb_app_id = '684091941642845';
-var fb_secret = '4aa72fc93d6fc6d8269b2aaf63522ec3';
+// var fbgraph = require('fbgraphapi');
+var passport = require('passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
+router.get('/', function(req, res) {
+    // if (!req.hasOwnProperty('facebook')) {
+    //     console.log('You are not logged in');
+    //     return res.redirect('/login');
+    // }
+    // /* See http://developers.facebook.com/docs/reference/api/ for more */
+    // req.facebook.graph('/me', function(err, me) {
+    //     console.log(me);
+    // });
+    
+    // req.facebook.graph('/me?fields=id,name', function(err, me) {
+    //     console.log(me);
+    // });
+    
+    // req.facebook.me(function(err, me) {
+    //     console.log(me);
+    // });
+    
+    // // /me/likes
+    // req.facebook.my.likes(function(err, likes) {
+    //     console.log(likes);
+    // });
+    
+    // res.end("Check console output");
+    res.render('index', { title: 'Express' });
 });
+
+router.get('/auth/facebook',
+  // passport.authenticate('facebook'),
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req, res) {
+    console.log("HERE");
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
+router.get('/auth/facebook/callback', function(req, res) {
+    console.log("in callback");
+    console.log("session", req.session.user);
+    req.session.user = req.query.code;
+
+    res.redirect('/');
+});
+
+// router.get('/login', function(req, res) {
+//     console.log('Start login');
+//     fbgraph.redirectLoginForm(req, res);    
+// });
 
 router.post('/textanalytics', function (req, res, next) {
     console.log(req.body.text);
