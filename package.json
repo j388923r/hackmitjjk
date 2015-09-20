@@ -41,6 +41,8 @@
     "gulp-watch": "^4.3.5",
     "map-stream": "0.0.6",
     "morgan": "~1.6.1",
+    "passport": "^0.3.0",
+    "passport-facebook": "^2.0.0",
     "request": "~2.62.0",
     "require-dot-file": "^0.4.0",
     "run-sequence": "^1.1.3",
