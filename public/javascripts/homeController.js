@@ -22,6 +22,8 @@
         $scope.photos = [];
 
         $http.get('/fbuser').success(function (data) {
+            console.log(data);
+
             var rootUrl = "https://shining-heat-2156.firebaseio.com";
             
             var userId = 'jamarbrooks9';
