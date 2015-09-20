@@ -34,7 +34,7 @@ app.use('/users', users);
 app.use(fbgraph.auth( {
         appId : fb_app_id,
         appSecret : fb_secret,
-        redirectUri : "http://0.0.0.0:3000/",
+        redirectUri : "http://hackmitjjk.azurewebsites.net",
         apiVersion: "v2.2"
     }));
 
