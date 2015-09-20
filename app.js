@@ -9,9 +9,11 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var fbgraph = require('fbgraphapi');
-var fb_app_id = '684091941642845';
-var fb_secret = '4aa72fc93d6fc6d8269b2aaf63522ec3';
+// var fbgraph = require('fbgraphapi');
+var passport = require("passport");
+var FacebookStrategy = require("passport-facebook");
+var FACEBOOK_APP_ID = '684091941642845';
+var FACEBOOK_APP_SECRET = '4aa72fc93d6fc6d8269b2aaf63522ec3';
 
 var app = express();
 
@@ -31,12 +33,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-app.use(fbgraph.auth( {
-        appId : fb_app_id,
-        appSecret : fb_secret,
-        redirectUri : "http://hackmitjjk.azurewebsites.net",
-        apiVersion: "v2.2"
-    }));
+// app.use(fbgraph.auth( {
+//         appId : fb_app_id,
+//         appSecret : fb_secret,
+//         redirectUri : "http://hackmitjjk.azurewebsites.net",
+//         // redirectUri : "http://localhost:3000",
+//         apiVersion: "v2.2"
+//     }));
+passport.serializeUser(function(user, done) {
+  done(null, user);
+})
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+})
+
+passport.use(new FacebookStrategy({
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    enableProof: false
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+    //   return done(err, user);
+    // });
+    // console.log(done(null,null));
+    console.log(profile);
+    return;
+  }
+));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

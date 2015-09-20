@@ -1,9 +1,10 @@
 var express = require('express');
 var request = require('request');
 var Clarifai = require('./clarifai-nodejs/clarifai_node.js');
-var fbgraph = require('fbgraphapi')
+// var fbgraph = require('fbgraphapi')
 var router = express.Router();
-var fbgraph = require('fbgraphapi');
+// var fbgraph = require('fbgraphapi');
+var passport = require('passport');
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -36,10 +37,27 @@ router.get('/', function(req, res) {
     res.render('index', { title: 'Express' });
 });
 
-router.get('/login', function(req, res) {
-    console.log('Start login');
-    fbgraph.redirectLoginForm(req, res);    
+router.get('/auth/facebook',
+  // passport.authenticate('facebook'),
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req, res) {
+    console.log("HERE");
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
+router.get('/auth/facebook/callback', function(req, res) {
+    console.log("in callback");
+    console.log("session", req.session.user);
+    req.session.user = req.query.code;
+
+    res.redirect('/');
 });
+
+// router.get('/login', function(req, res) {
+//     console.log('Start login');
+//     fbgraph.redirectLoginForm(req, res);    
+// });
 
 router.post('/textanalytics', function (req, res, next) {
     console.log(req.body.text);
