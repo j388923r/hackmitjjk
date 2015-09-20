@@ -1,9 +1,14 @@
-﻿
+
 <div class="ui raised very padded text container segment">
+<!-- <<<<<<< HEAD -->
 	<!-- <table border="1"> -->
 	<!-- <tr> -->
 <!-- 	<div class="ui special cards">
 	  <div class="centered card">
+=======
+	<div class="ui special cards">
+	  <div class="card">
+>>>>>>> b3984584b5e836d00437ad8a16aeace184835cd7
 	    <div class="blurring dimmable image">
 	      <div class="ui dimmer">
 	        <div class="content">
@@ -19,6 +24,7 @@
 	        <span class="date">{{me.name}}</span>
 	      </div>
 	    </div>
+<<<<<<< HEAD
 	  </div> -->
 	
 
@@ -63,10 +69,24 @@
     </div>
   </div>
 	<div id="text" class="right item ul list">
-		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
+<!-- 		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div> -->
 <!-- >>>>>>> 08bfdc0409406892f02c040c46371e577e027fb6 -->
+<!-- ======= -->
+	  </div>
+	  	<div class="extra content">
+		<div class="ui grid">
+			<a ng-repeat="descriptor in descriptors" class="eight wide">{{descriptor}}</a>
+		</div>
+		</div>
+<!-- >>>>>>> b3984584b5e836d00437ad8a16aeace184835cd7 -->
 	</div>
 	<!-- </tr> -->
 	<!-- </table> -->
 </div>
+
+<script>
+$('.special.cards .image').dimmer({
+  on: 'hover'
+});
+</script>
 

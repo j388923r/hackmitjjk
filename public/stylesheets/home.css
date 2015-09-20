@@ -44,9 +44,8 @@
 }
 
 #welcomeMessage {
-    padding: 25px;
-    width: 50%;
-    margin-top: 25%;
+  font-size: 2em;
+   
 }
 
 #keyword-text {
@@ -62,6 +61,8 @@
 .user-picture {
   height: 350px;
   width: 350px;
+}
+#card{
 }
 
 body{

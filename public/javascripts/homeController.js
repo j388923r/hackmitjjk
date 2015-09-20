@@ -23,6 +23,7 @@
 
         $http.get('/fbuser').success(function (data) {
             $scope.fbuser = data;
+            $scope.me.photo = $scope.fbuser.picture.data.url;
             
             console.log($scope.fbuser.picture.data.url);
             console.log($scope.fbuser);
@@ -30,7 +31,8 @@
             var rootUrl = "https://shining-heat-2156.firebaseio.com";
             
             $http.post('/clarifai', { text: $scope.fbuser.picture.data.url }).success(function (data) {
-                $scope.fbPicWords = data[0];
+                $scope.descriptors = data[0];
+
                 console.log(data);
             });
             
@@ -40,7 +42,7 @@
             var ref = new Firebase(rootUrl + '/');
             ref.on('value', function (snapshot) {
                 console.log(snapshot.val());
-                $scope.friends = snapshot.val();
+                // $scope.friends = snapshot.val();
                 console.log($scope.friends, "Friends");
             });
             
