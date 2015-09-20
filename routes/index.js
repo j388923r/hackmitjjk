@@ -2,6 +2,8 @@ var express = require('express');
 var request = require('request');
 var Clarifai = require('./clarifai-nodejs/clarifai_node.js');
 var router = express.Router();
+var fb_app_id = '684091941642845';
+var fb_secret = '4aa72fc93d6fc6d8269b2aaf63522ec3';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
