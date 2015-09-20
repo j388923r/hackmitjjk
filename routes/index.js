@@ -5,6 +5,9 @@ var Clarifai = require('./clarifai-nodejs/clarifai_node.js');
 var router = express.Router();
 // var fbgraph = require('fbgraphapi');
 var passport = require('passport');
+var APP_ID = '684091941642845';
+var APP_SECRET = '4aa72fc93d6fc6d8269b2aaf63522ec3';
+var REDIRECT_URI = "http://localhost:3000/auth/facebook/callback";
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -66,11 +69,21 @@ router.get('/auth/facebook',
   });
 
 router.get('/auth/facebook/callback', function(req, res) {
-    console.log("in callback");
-    console.log("session", req.session.user);
-    req.session.user = req.query.code;
+    console.log('HERE in callback');
+    var code = req.query.code;
+    var token_url = "https://graph.facebook.com/oauth/access_token?client_id=" + APP_ID + "&redirect_uri=" + REDIRECT_URI + "&client_secret=" + APP_SECRET + "&code=" + code;
+    console.log(token_url);
+    var options = {
+        url: token_url,
+        method: "GET"
+    };
 
-    res.redirect('/');
+    var callback = function(err, data) {
+        req.session.user = data.body;
+        console.log("session", req.session.user);
+        res.redirect('/');
+    }
+    
 });
 
 // router.get('/login', function(req, res) {
