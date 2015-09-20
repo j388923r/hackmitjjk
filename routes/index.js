@@ -116,6 +116,10 @@ router.post('/textanalytics', function (req, res, next) {
     request(options, callback);
 });
 
+router.post('/logout', function (req, res) {
+    req.session.user = "";
+    res.redirect('/');
+});
 
 //Clarifai stuff
 var CLIENT_ID = "_emnlpbMpvUbpXjRUZUbal7ia0wbworG7KuGJbzb";
