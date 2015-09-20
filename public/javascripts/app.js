@@ -20,6 +20,9 @@
         $routeProvider.when("/", {
             controller: 'homeController',
             templateUrl: '/views/home.html'
+        }).otherwise({
+            controller: 'homeController',
+            templateUrl: '/views/home.html'
         });
     });
 })();

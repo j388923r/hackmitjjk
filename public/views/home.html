@@ -3,9 +3,10 @@
   <button id = "test" class = "ui button">InfoMagic!</button>
 </div>
 
-<div class="ui">
-    <textarea ng-model="text" cols="80" rows="10"></textarea>
-    <button type="submit" class="ui button" ng-click="analyzeText(text)">Submit Text</button>
+<div class="ui" id="homeCenter">
+    <center>
+        <img src="https://tse1.mm.bing.net/th?&id=JN.C9U%2bEvENBzcbK0A/62YlLQ&w=300&h=300&c=0&pid=1.9&rs=0&p=0" width="300" height="400" />
+    </center>
 </div>
 
 <div id = "infographic">
@@ -14,3 +15,7 @@
 		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
 	</div>
 </div>
+
+<span ng-repeat="friend in friends">
+    {{friend}}
+</span>
