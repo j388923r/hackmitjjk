@@ -25,6 +25,7 @@
             $scope.fbuser = data;
             
             console.log($scope.fbuser.picture.data.url);
+            console.log($scope.fbuser);
 
             var rootUrl = "https://shining-heat-2156.firebaseio.com";
             

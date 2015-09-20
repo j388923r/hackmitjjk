@@ -7,7 +7,7 @@ var router = express.Router();
 var passport = require('passport');
 var APP_ID = '684091941642845';
 var APP_SECRET = '4aa72fc93d6fc6d8269b2aaf63522ec3';
-var REDIRECT_URI = "http://hackmitjjk.azurewebsites.net/auth/facebook/callback";
+var REDIRECT_URI = "http://localhost:3000/auth/facebook/callback";
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -46,7 +46,7 @@ router.get('/', function(req, res) {
 router.get('/fbuser', function (req, res){
     console.log("Facebook User");
     var options = {
-        url : "https://graph.facebook.com/me?fields=id,name,picture&" + req.session.user,
+        url : "https://graph.facebook.com/me?fields=id,name,picture,photos,permissions,albums&" + req.session.user,
         method : "GET"
     };
     
