@@ -53,11 +53,16 @@
         }
 
         $("#test").click(function(){
-            console.log("Still being clicked");
             $scope.me.photo= $("#search").val();
-            // $("#image").attr("src", imageLink);
             $scope.clarifai($scope.me.photo);
         })
+
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+                $scope.me.photo= $("#search").val();
+                $scope.clarifai($scope.me.photo);
+            }
+        });
 
         $(document).ready(function() {
             $(".fb-image").each(function(index) {
