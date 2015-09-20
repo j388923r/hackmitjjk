@@ -64,12 +64,10 @@ router.get('/auth/facebook/callback', function(req, res) {
 
     var callback = function(err, data) {
         req.session.user = data.body;
+        console.log("session", req.session.user);
+        res.redirect('/');
     }
-    request(options, callback);
-
-    console.log("session", req.session.user);
-
-    res.redirect('/');
+    
 });
 
 // router.get('/login', function(req, res) {
