@@ -22,9 +22,16 @@
         $scope.photos = [];
 
         $http.get('/fbuser').success(function (data) {
-            console.log(data);
+            $scope.fbuser = data;
+            
+            console.log($scope.fbuser.picture.data.url);
 
             var rootUrl = "https://shining-heat-2156.firebaseio.com";
+            
+            $http.post('/clarifai', { text: $scope.fbuser.picture.data.url }).success(function (data) {
+                $scope.fbPicWords = data[0];
+                console.log(data);
+            });
             
             var userId = 'jamarbrooks9';
             userId.replace(/\./g, "");
@@ -42,11 +49,13 @@
                 'JordanAPPowell',
                 'katxiao'
             ];
+            
+            $scope.user.$save().then(function (data) {
+                 console.log(data);
+            });
         });
         
-        // $scope.user.$save().then(function (data) {
-        //     console.log(data);
-        // });
+
 
         $scope.clicked = function(){
             // console.log("I'm being clicked alright");

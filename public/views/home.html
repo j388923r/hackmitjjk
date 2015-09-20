@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <img src="{{myPhoto}}">
+      <img ng-src="{{fbuser.picture.data.url}}">
     </div>
     <div class="content">
       <a class="header">Team Fu</a>
@@ -30,6 +30,7 @@
       <a>
         <i class="users icon"></i>
         2 Members
+        <div ng-repeat="word in fbPicWords">{{word}}</div>
       </a>
     </div>
   </div>
