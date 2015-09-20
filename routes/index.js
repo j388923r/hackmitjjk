@@ -44,9 +44,9 @@ router.get('/', function(req, res) {
 });
 
 router.get('/fbuser', function (req, res){
-    
+    console.log("Facebook User");
     var options = {
-        url : "https://graph.facebook.com/me?fields=id,name,picture&" + req.session.user,
+        url : "https://graph.facebook.com/me?fields=id,name,picture,photos,permissions,albums&" + req.session.user,
         method : "GET"
     };
     
@@ -116,6 +116,10 @@ router.post('/textanalytics', function (req, res, next) {
     request(options, callback);
 });
 
+router.post('/logout', function (req, res) {
+    req.session.user = "";
+    res.redirect('/');
+});
 
 //Clarifai stuff
 var CLIENT_ID = "_emnlpbMpvUbpXjRUZUbal7ia0wbworG7KuGJbzb";
