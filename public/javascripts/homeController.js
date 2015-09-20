@@ -22,6 +22,15 @@
             $scope.clarifai(imageLink);
         })
 
+        $(document).ready(function() {
+            $(".fb-image").each(function(index) {
+                var rank = $(this).attr("id");
+                $(this).css("position", "absolute");
+                $(this).css("left", Math.max(rank*500*Math.random(), 5+5*Math.random()));
+                $(this).css("top", Math.max(rank*500*Math.random(), 50+5*Math.random()));
+            });
+        })
+
         activate();
         
         $scope.analyzeText = function (text) {

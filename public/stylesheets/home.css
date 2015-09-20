@@ -19,3 +19,8 @@
   left: 10%;
   top: 10%;
 }
+
+.fb-image {
+  margin: 5px;
+  position: absolute;
+}
