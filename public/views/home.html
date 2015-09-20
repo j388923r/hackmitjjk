@@ -1,10 +1,38 @@
 
-
 <div id = "infographic">
 	<img id="image" />
 	<div id="text" class="ul list">
 		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
 	</div>
+</div>
+
+<div class="ui special cards">
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+        	<div id="text" class="ul list">
+				<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
+			</div>
+          </div>
+        </div>
+      </div>
+      <img src="{{myPhoto}}">
+    </div>
+    <div class="content">
+      <a class="header">Team Fu</a>
+      <div class="meta">
+        <span class="date">Create in Sep 2014</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
 </div>
 
 <div id="fb-root"></div>

@@ -15,6 +15,7 @@
             {name: "Kat", picture: "https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11057280_10153613529293044_1594946172306589864_n.jpg?oh=7f40d20a216b0c12dad20056fc430ace&oe=56A2D64A"},
             {name: "Jordan", picture: "https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11011953_10206723096500287_2097854998406405417_n.jpg?oh=df5bc061855d562606f486cbd7d1211c&oe=56A99035"}
         ];
+        $scope.myPhoto;
 
         // $scope.friends.pop();
         // $scope.friends.pop();
@@ -51,9 +52,9 @@
 
         $("#test").click(function(){
             console.log("Still being clicked");
-            var imageLink = $("#search").val();
-            $("#image").attr("src", imageLink);
-            $scope.clarifai(imageLink);
+            $scope.myPhoto= $("#search").val();
+            // $("#image").attr("src", imageLink);
+            $scope.clarifai($scope.myPhoto);
         })
 
         $(document).ready(function() {

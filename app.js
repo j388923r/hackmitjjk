@@ -8,8 +8,6 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var friends = require('./routes/friends');
-var photos = require('./routes/photos');
 
 // var fbgraph = require('fbgraphapi');
 var passport = require("passport");
