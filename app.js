@@ -4,9 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var fbgraph = require('fbgraphapi');
+var fb_app_id = '684091941642845';
+var fb_secret = '4aa72fc93d6fc6d8269b2aaf63522ec3';
 
 var app = express();
 
@@ -20,10 +25,18 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({secret: "SECRET"}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.use(fbgraph.auth( {
+        appId : fb_app_id,
+        appSecret : fb_secret,
+        redirectUri : "http://0.0.0.0:3000/",
+        apiVersion: "v2.2"
+    }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
