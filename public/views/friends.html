@@ -1,0 +1,12 @@
+<div id = "pictures" class="ui three column grid">
+  <div class="column" ng-repeat="friend in friends">
+    <div class="ui centered card">
+      <div class="image">
+        <img ng-src="{{friend.picture}}">
+      </div>
+      <div class="content">
+        <a class="header">{{friend.name}}</a>
+      </div>
+    </div>
+  </div>
+</div>
