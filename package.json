@@ -13,7 +13,9 @@
     "del": "^2.0.2",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "express-session": "^1.11.3",
     "extend": "^3.0.0",
+    "fbgraphapi": "~0.5.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-chmod": "^1.2.0",
@@ -39,12 +41,12 @@
     "gulp-watch": "^4.3.5",
     "map-stream": "0.0.6",
     "morgan": "~1.6.1",
+    "request": "~2.62.0",
     "require-dot-file": "^0.4.0",
     "run-sequence": "^1.1.3",
     "semantic-ui": "^2.1.4",
     "serve-favicon": "~2.3.0",
-    "yamljs": "^0.2.4",
     "stdio": "~0.2.7",
-    "request": "~2.62.0"
+    "yamljs": "^0.2.4"
   }
 }
