@@ -32,7 +32,7 @@
             var ref = new Firebase(rootUrl + '/');
             ref.on('value', function (snapshot) {
                 console.log(snapshot.val());
-                $scope.friends = snapshot.val();
+                // $scope.friends = snapshot.val();
                 console.log($scope.friends, "Friends");
             });
             

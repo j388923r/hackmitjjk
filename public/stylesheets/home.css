@@ -44,9 +44,8 @@
 }
 
 #welcomeMessage {
-    padding: 25px;
-    width: 50%;
-    margin-top: 25%;
+  font-size: 2em;
+   
 }
 
 .fb-image {
@@ -54,6 +53,8 @@
   position: absolute;
 }
 
+#card{
+}
 body{
   padding-top:87px;
 }

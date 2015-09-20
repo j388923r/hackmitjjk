@@ -51,7 +51,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "http://hackmitjjk.azurewebsites.net/auth/facebook/callback",
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
     enableProof: false
   },
   function(accessToken, refreshToken, profile, done) {

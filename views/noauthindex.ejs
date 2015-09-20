@@ -16,13 +16,18 @@
             <a href="" class="item">Quotes</a>
         </div>
     </div>
-    <div id="welcomeMessage">
-      <p>Welcome to InfoMagic!</p>
-      <p>Please log in with your Facebook account to see how our proven Machine Learning algorithm describes your friend's profile pictures as well as your own.</p>
-    </div>
-  
-  <div id="fb-root"></div>
-  <div><a href="/auth/facebook" style="background-color: #4e69a2; color: white;"> F | Login with FB </a> </div>
+    <div class="ui two column very relaxed grid">
+      <div class="column" id="welcomeMessage">
+        <div class="ui segment">
+          <p>Welcome to InfoMagic!</p>
+          <p>Please log in with your Facebook account to see how our proven Machine Learning algorithm describes your friend's profile pictures as well as your own.</p>
+        </div>
+      </div>
+      <div class="ui vertical divider"></div>
+      <div class="column">
+         <div id="fb-root"></div>
+         <div class="ui button"><a href="/auth/facebook" style="background-color: #4e69a2; color: white;"> F | Login with FB </a> </div>
+      </div>
   
   </body>
 </html>
