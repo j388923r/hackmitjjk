@@ -22,8 +22,16 @@
             <a href="" class="active item"><i class="home icon"></i></a>
             <a href="" class="item">Contacts</a>
             <a href="" class="item">Quotes</a>
-        </div>
-    </div>
-	<div ng-view></div>
+              <div id = "searchContainer" class="ui category search item">
+			    <div class="ui icon input">
+			      <input id = "search" class="prompt" type="text" placeholder="Search animals...">
+			      <i class="search link icon"></i>
+			    </div>
+			  </div>
+			<!-- <input id = "search" type="text" placeholder="Search..."> -->
+			<button id = "test" class = "ui button">InfoMagic!</button>
+		</div>
+  </div>
+  <div ng-view></div>
   </body>
 </html>
