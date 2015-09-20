@@ -9,11 +9,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/textanalytics', function (req, res, next) {
+    console.log(req.body.text);
     var content = {
         "DocumentText" : req.body.text,
         "IsTwitterContent" : false,
         "UserCategoryModelName" : "MyTrainedModel",
-        "PrivateKey" : "21D37DCD-582D-4391-8C61-4ED3CF9899BE",
+        "PrivateKey" : "",
         "Secret" : "infomagic"
     };
 
@@ -26,7 +27,7 @@ router.post('/textanalytics', function (req, res, next) {
     var callback = function (err, data){
         console.log(err);
         console.log(data.body);
-        res.status(200).send("Text Analyzed");
+        res.status(200).send(data.body);
     }
 
     request(options, callback);

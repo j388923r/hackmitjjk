@@ -27,8 +27,8 @@
         $scope.analyzeText = function (text) {
             $http.post('/textanalytics', {
                 text: text
-            }).success(function (analyzeText) {
-                var json = $.xml2json(xml);
+            }).success(function (analyzedText) {
+                var json = $.xml2json(analyzedText);
                 console.log(json);           
             });
         }

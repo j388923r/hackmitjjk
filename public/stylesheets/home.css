@@ -3,11 +3,13 @@
   width: 400px;
   position: relative;
 }
+
 #image {
   position: absolute;
   left: 0;
   top: 0;
 }
+
 #text {
   z-index: 100;
   position: absolute;
