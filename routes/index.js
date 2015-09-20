@@ -13,7 +13,7 @@ router.post('/textanalytics', function (req, res, next) {
         "DocumentText" : req.body.text,
         "IsTwitterContent" : false,
         "UserCategoryModelName" : "MyTrainedModel",
-        "PrivateKey" : "21D37DCD-582D-4391-8C61-4ED3CF9899BE",
+        "PrivateKey" : "",
         "Secret" : "infomagic"
     };
 
