@@ -8,15 +8,25 @@
     var app = angular.module('app', [
         // Angular modules
         'ngAnimate',
-        'ngRoute'
+        'ngRoute',
 
         // Custom modules
 
         // 3rd Party Modules
+        'firebase'
     ]);
 
     app.config(function ($routeProvider) {
         $routeProvider.when("/", {
+            controller: 'homeController',
+            templateUrl: '/views/home.html'
+        }).when("/photos", {
+            controller: 'homeController',
+            templateUrl: '/views/photos.html'
+        }).when("/friends",{
+            controller: 'homeController',
+            templateUrl: '/views/friends.html'
+        }).otherwise({
             controller: 'homeController',
             templateUrl: '/views/home.html'
         });

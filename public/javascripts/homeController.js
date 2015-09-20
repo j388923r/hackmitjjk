@@ -5,9 +5,9 @@
         .module('app')
         .controller('homeController', homeController);
 
-    homeController.$inject = ['$scope', '$http']; 
+    homeController.$inject = ['$scope', '$http', '$firebaseObject', '$firebaseArray']; 
 
-    function homeController($scope, $http) {
+    function homeController($scope, $http, $firebaseObject, $firebaseArray) {
         $scope.title = 'homeController';
         $scope.descriptors = [];
         $scope.friends = [
@@ -19,6 +19,31 @@
         // $scope.friends.pop();
         // $scope.friends.pop();
         $scope.photos = [];
+
+        $http.get('/fbuser').success(function (data) {
+            var rootUrl = "https://shining-heat-2156.firebaseio.com";
+            
+            var userId = 'jamarbrooks9';
+            userId.replace(/\./g, "");
+            
+            var ref = new Firebase(rootUrl + '/');
+            ref.on('value', function (snapshot) {
+                console.log(snapshot.val());
+                $scope.friends = snapshot.val();
+                console.log($scope.friends, "Friends");
+            });
+            
+            $scope.user = $firebaseObject(ref);
+            
+            $scope.user.friends = [
+                'JordanAPPowell',
+                'katxiao'
+            ];
+        });
+        
+        // $scope.user.$save().then(function (data) {
+        //     console.log(data);
+        // });
 
         $scope.clicked = function(){
             // console.log("I'm being clicked alright");
