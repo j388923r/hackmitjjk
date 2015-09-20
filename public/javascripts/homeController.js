@@ -10,8 +10,6 @@
     function homeController($scope, $http, $firebaseObject, $firebaseArray) {
         $scope.title = 'homeController';
         $scope.descriptors = [];
-        var vars = getUrlVars();
-        console.log(vars);
         $http.get('/fbuser?id=').success(function (data) {
             var rootUrl = "https://shining-heat-2156.firebaseio.com";
             

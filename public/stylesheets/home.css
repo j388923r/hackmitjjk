@@ -24,6 +24,11 @@
     margin-top: 10%;
 }
 
+#welcomeMessage {
+    padding: 25px;
+    width: 50%;
+    margin-top: 25%;
+}
 .fb-image {
   margin: 5px;
   position: absolute;

@@ -34,7 +34,10 @@ router.get('/', function(req, res) {
     // });
     
     // res.end("Check console output");
-    res.render('index', { title: 'Express' });
+    if(req.session.user)
+        res.render('index', { title: 'Express' });
+    else
+        res.render('noauthindex', { title: 'No Auth' });
 });
 
 router.get('/auth/facebook',
