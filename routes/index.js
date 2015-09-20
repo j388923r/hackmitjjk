@@ -1,6 +1,7 @@
 var express = require('express');
 var request = require('request');
 var Clarifai = require('./clarifai-nodejs/clarifai_node.js');
+var fbgraph = require('fbgraphapi')
 var router = express.Router();
 
 /* GET home page. */
