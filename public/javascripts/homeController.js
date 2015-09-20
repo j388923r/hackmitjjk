@@ -10,6 +10,21 @@
     function homeController($scope, $http) {
         $scope.title = 'homeController';
         $scope.descriptors = [];
+        
+        var rootUrl = "https://shining-heat-2156.firebaseio.com";
+
+        var ref = new Firebase(rootUrl + '/jamar.brooks.9');
+        
+        var syncObject = $firebaseObject(ref);
+        
+        syncObject.$bindTo($scope.data, "data");
+        
+        $scope.data = {
+            friends : [
+                "JordanAPPowell",
+                "katxiao"
+            ]
+        };
 
         $scope.clicked = function(){
             // console.log("I'm being clicked alright");

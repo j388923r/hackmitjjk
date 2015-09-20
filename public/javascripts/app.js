@@ -8,11 +8,12 @@
     var app = angular.module('app', [
         // Angular modules
         'ngAnimate',
-        'ngRoute'
+        'ngRoute',
 
         // Custom modules
 
         // 3rd Party Modules
+        'firebase'
     ]);
 
     app.config(function ($routeProvider) {
