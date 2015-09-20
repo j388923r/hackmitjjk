@@ -5,9 +5,9 @@
         .module('app')
         .controller('homeController', homeController);
 
-    homeController.$inject = ['$scope']; 
+    homeController.$inject = ['$scope','$http']; 
 
-    function homeController($scope) {
+    function homeController($scope, $http) {
         $scope.title = 'homeController';
         $scope.descriptors = [];
 
@@ -26,8 +26,8 @@
         $scope.analyzeText = function (text) {
             $http.post('/textanalytics', {
                 text: text
-            }).success(function (analyzeText) {
-                var json = $.xml2json(xml);
+            }).success(function (analyzedText) {
+                var json = $.xml2json(analyzedText);
                 console.log(json);           
             });
         }
