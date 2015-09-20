@@ -67,7 +67,7 @@ router.get('/auth/facebook/callback', function(req, res) {
         console.log("session", req.session.user);
         res.redirect('/');
     }
-    
+    request(options, callback);    
 });
 
 // router.get('/login', function(req, res) {
