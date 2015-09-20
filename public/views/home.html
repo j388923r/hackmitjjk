@@ -1,5 +1,7 @@
 
 <div class="ui raised very padded text container segment">
+	<!-- <table border="1"> -->
+	<!-- <tr> -->
 	<div class="ui special cards">
 	  <div class="centered card">
 	    <div class="blurring dimmable image">
@@ -9,7 +11,7 @@
 	          </div>
 	        </div>
 	      </div>
-	      <img src="{{me.photo}}">
+	      <img class="user-picture" src="{{me.photo}}">
 	    </div>
 	    <div class="content">
 	      <a class="header"></a>
@@ -18,10 +20,18 @@
 	      </div>
 	    </div>
 	  </div>
-	</div>
+	
 
-	<div id="text" class="right item ul list">
-		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
+	<div id="keyword-text" class="right item list">
+		<table>
+			<tr>
+				<td class="item" ng-repeat="descriptor in descriptors">{{descriptor}}, 
+				</td>
+			</tr>
+		</table>
 	</div>
+	</div>
+	<!-- </tr> -->
+	<!-- </table> -->
 </div>
 

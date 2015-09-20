@@ -49,9 +49,19 @@
     margin-top: 25%;
 }
 
+#keyword-text {
+  position: relative;
+  float: right;
+}
+
 .fb-image {
   margin: 5px;
   position: absolute;
+}
+
+.user-picture {
+  height: 350px;
+  width: 350px;
 }
 
 body{
