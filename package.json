@@ -44,6 +44,7 @@
     "semantic-ui": "^2.1.4",
     "serve-favicon": "~2.3.0",
     "yamljs": "^0.2.4",
-    "stdio": "~0.2.7"
+    "stdio": "~0.2.7",
+    "request": "~2.62.0"
   }
 }

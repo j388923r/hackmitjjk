@@ -5,7 +5,7 @@
         .module('app')
         .controller('homeController', homeController);
 
-    homeController.$inject = ['$scope','$http']; 
+    homeController.$inject = ['$scope', '$http']; 
 
     function homeController($scope, $http) {
         $scope.title = 'homeController';
@@ -34,6 +34,7 @@
             console.log("Still being clicked");
             var imageLink = $("#search").val();
             $("#image").attr("src", imageLink);
+            $scope.clarifai(imageLink);
         })
 
         activate();
@@ -44,6 +45,17 @@
             }).success(function (analyzedText) {
                 var json = $.xml2json(analyzedText);
                 console.log(json);           
+            });
+        }
+
+        $scope.clarifai = function (text){
+            $http.post('/clarifai', {
+                text: text
+            }).success(function(result){
+                // console.log(result[0]);
+                $scope.descriptors = [];
+                $scope.descriptors = result[0];
+                console.log(result[0]);
             });
         }
 
