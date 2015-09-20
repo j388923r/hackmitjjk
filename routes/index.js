@@ -40,6 +40,22 @@ router.get('/', function(req, res) {
         res.render('noauthindex', { title: 'No Auth' });
 });
 
+router.get('/fbuser', function (req, res){
+    
+    var options = {
+        url : "https://graph.facebook.com/v1.0/me/friends?" + req.session.user,
+        method : "GET"
+    };
+    
+    var callback = function (err, data) {
+        console.log(err);
+        console.log(data.body);
+        res.status(200).send(data.body);
+    }
+    
+    request(options, callback);
+})
+
 router.get('/auth/facebook',
   // passport.authenticate('facebook'),
   passport.authenticate('facebook', { failureRedirect: '/' }),

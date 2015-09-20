@@ -10,7 +10,7 @@
     function homeController($scope, $http, $firebaseObject, $firebaseArray) {
         $scope.title = 'homeController';
         $scope.descriptors = [];
-        $http.get('/fbuser?id=').success(function (data) {
+        $http.get('/fbuser').success(function (data) {
             var rootUrl = "https://shining-heat-2156.firebaseio.com";
             
             var userId = 'jamarbrooks9';
