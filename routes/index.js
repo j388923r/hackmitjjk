@@ -46,7 +46,7 @@ router.get('/', function(req, res) {
 router.get('/fbuser', function (req, res){
     console.log("Facebook User");
     var options = {
-        url : "https://graph.facebook.com/me?fields=id,name,picture,photos,permissions,albums&" + req.session.user,
+        url : "https://graph.facebook.com/me?fields=id,name,picture,photos,permissions,friends&" + req.session.user,
         method : "GET"
     };
     
