@@ -15,23 +15,23 @@
 	<script src="/javascripts/app.js"></script>
 	<script src="/javascripts/homeController.js"></script>
 	<script src="semantic/dist/semantic.min.js"></script>
-  </head>
-  <body ng-app="app">
-  <div class="ui grid">
+	  <div id="navbar" class="ui grid">
        <div class="ui inverted fixed menu navbar page grid">
-            <a href="" class="active item"><i class="home icon"></i></a>
-            <a href="" class="item">Contacts</a>
-            <a href="" class="item">Quotes</a>
+            <a href="#" class="item"><i class="home icon"></i></a>
+            <a href="#/photos" class="item">Photos</a>
+            <a href="#/friends" class="item">Friends</a>
               <div id = "searchContainer" class="ui category search item">
 			    <div class="ui icon input">
 			      <input id = "search" class="prompt" type="text" placeholder="Search animals...">
-			      <i class="search link icon"></i>
+			      <i id = "test" class="search link icon"></i>
 			    </div>
 			  </div>
 			<!-- <input id = "search" type="text" placeholder="Search..."> -->
-			<button id = "test" class = "ui button">InfoMagic!</button>
+			<!-- <button id = "test" class = "ui button">InfoMagic!</button> -->
 		</div>
-  </div>
-  <div ng-view></div>
+ 	 </div>
+  </head>
+  <body ng-app="app">
+  	<div ng-view></div>
   </body>
 </html>

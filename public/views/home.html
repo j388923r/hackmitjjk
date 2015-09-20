@@ -4,21 +4,28 @@
     <button type="submit" class="ui button" ng-click="analyzeText(text)">Submit Text</button>
 </div>
  -->
-<div id = "toggle" class="ui secondary pointing menu">
-  <a class="item">
-    Home
-  </a>
-  <a class="item">
-    Messages
-  </a>
+<div id = "pictures" class="ui three column grid">
+  <div class="column" ng-repeat="friend in friends">
+    <div class="ui centered card">
+      <div class="image">
+        <img ng-src="{{friend.picture}}">
+      </div>
+      <div class="content">
+        <a class="header">{{friend.name}}</a>
+      </div>
+    </div>
+  </div>
 </div>
-
 <div id = "infographic">
 	<img id="image" />
 	<div id="text" class="ul list">
 		<div class="item" ng-repeat="descriptor in descriptors">{{descriptor}}</div>
 	</div>
 </div>
+
+
+
+
 
 <div id="fb-root"></div>
 <div><a href="/auth/facebook" style="background-color: #4e69a2; color: white;"> F | Login with FB </a> </div>

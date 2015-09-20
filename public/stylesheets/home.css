@@ -1,3 +1,7 @@
+#navbar{
+  margin-bottom: 5%;
+}
+
 #infographic {
   height: 400px;
   width: 400px;
@@ -27,11 +31,17 @@
 #tes10{
   margin-left:1%;
 }
-
+#pictures{
+  margin-top: 10%;
+}
 #toggle{
   margin-top:10%;
 
 .fb-image {
   margin: 5px;
   position: absolute;
+}
+
+body{
+  padding-top:87px;
 }

@@ -10,6 +10,15 @@
     function homeController($scope, $http) {
         $scope.title = 'homeController';
         $scope.descriptors = [];
+        $scope.friends = [
+            {name: "Jamar", picture: "https://scontent.xx.fbcdn.net/hphotos-xap1/t31.0-8/q84/s960x960/1493600_10202037529565456_346907594199783918_o.jpg"},
+            {name: "Kat", picture: "https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11057280_10153613529293044_1594946172306589864_n.jpg?oh=7f40d20a216b0c12dad20056fc430ace&oe=56A2D64A"},
+            {name: "Jordan", picture: "https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11011953_10206723096500287_2097854998406405417_n.jpg?oh=df5bc061855d562606f486cbd7d1211c&oe=56A99035"}
+        ];
+
+        // $scope.friends.pop();
+        // $scope.friends.pop();
+        $scope.photos = [];
 
         $scope.clicked = function(){
             // console.log("I'm being clicked alright");
